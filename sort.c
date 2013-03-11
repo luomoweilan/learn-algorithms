@@ -24,6 +24,7 @@ void insertion_sort(int array[], int len)
 	{
 		key = array[j];
 		i = j - 1;
+
 		while (i >= 0 && array[i] > key)
 		{
 			array[i+1] = array[i]; 
