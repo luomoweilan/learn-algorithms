@@ -12,7 +12,6 @@ void print_array(int array[], int len)
 
 	for (i = 0; i < len; i++)
 		printf("%d ", array[i]);
-
 	printf("\n");
 }
 
@@ -24,7 +23,6 @@ void insertion_sort(int array[], int len)
 	{
 		key = array[j];
 		i = j - 1;
-
 		while (i >= 0 && array[i] > key)
 		{
 			array[i+1] = array[i]; 
@@ -42,7 +40,6 @@ int main(void)
 	print_array(array, 10);
 	insertion_sort(array, 10);
 	print_array(array, 10);
-
 	return 1;
 }
 #endif
