@@ -40,6 +40,7 @@ int main(void)
 	print_array(array, 10);
 	insertion_sort(array, 10);
 	print_array(array, 10);
+
 	return 1;
 }
 #endif
