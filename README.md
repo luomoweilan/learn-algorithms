@@ -1,4 +1,4 @@
 learn-algorithms
 ================
 
-some basic algorithms from Introduction to Algorithms.
+some basic algorithms from "Introduction to Algorithms".
