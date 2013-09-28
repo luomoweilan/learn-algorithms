@@ -61,7 +61,7 @@ void main(int argc, char *argv[])
 
 	while (fgets(line_buff, MAX_LINE_NUM, objdump)) {
 		if (!redircsym_info_isppc(line_buff, symaddr, symtype, symname) 
-				&& (tmp = redircsym_map_find("zsy"))) {
+				&& (tmp = redircsym_map_find(symname))) {
 			redircsym_map_set_matchflag(tmp);
 			if (!redircsym_info_add(symaddr, symtype, tmp)) {
 				printf("redircsym_info_add %s error!\n", symname);
