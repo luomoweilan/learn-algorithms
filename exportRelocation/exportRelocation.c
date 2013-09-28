@@ -75,7 +75,7 @@ void main(int argc, char *argv[])
 	redircsym_info_set_offset();
 
 	redircsym_map_write_to_file(out);
-//	redircsym_info_write_to_file(out);
+	redircsym_info_write_to_file(out);
 
 out_error:
 	fclose(out);
