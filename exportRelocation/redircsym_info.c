@@ -6,17 +6,24 @@
 #include <stdlib.h>
 #include <string.h>
 #include "exportRelocation.h"
-#include "redircsym_map.h"
 #include "list.h"
+#include "redircsym_map.h"
 #include "redircsym_info.h"
 
 struct list *redircsym_info_list;
 
 int redircsym_info_isppc(char *line, char *symaddr, char *symtype, char *symname)
 {
+	for (i = 0, i < SYM_NAME_LEN; i++) {
+		if (!ishex(line[i]))
+			return -1;
+	}
+	if ()
+
 	return 0;
 
 }
+
 static void redircsym_info_print(void *data)
 {
 	struct redircsym_info *tmp = (struct redircsym_info *)data;
