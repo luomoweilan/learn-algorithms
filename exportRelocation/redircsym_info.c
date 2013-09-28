@@ -63,3 +63,15 @@ void redircsym_info_set_offset(void)
 		p = p->next;
 	}
 }
+
+void redircsym_info_write_to_file(FILE *f)
+{
+	struct list *p = redircsym_info_list;
+	struct redircsym_info *tmp;
+
+	while (p != NULL) {
+		tmp = (struct redircsym_info *)(p->data);
+		fwrite((char *)tmp->symaddr, 1, sizeof(int), f);
+		p = p->next;
+	}
+}
