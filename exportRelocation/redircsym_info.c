@@ -4,7 +4,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "exportRelocation.h"
+#include "redircsym_map.h"
 #include "list.h"
 #include "redircsym_info.h"
 
@@ -54,12 +56,13 @@ void redircsym_info_set_offset(void)
 	struct redircsym_info *tmp_info;
 	struct redircsym_map *tmp_map;
 	struct list *tmp_list;
+	int offset;
 
 	while (p != NULL) {
 		tmp_info = (struct redircsym_info *)(p->data);
 		tmp_list = (struct list *)(tmp_info->map);
 		tmp_map = (struct redircsym_map *)(tmp_list->data);
-	//	tmp_info->offset = tmp_map->offset;
+		tmp_info->offset = tmp_map->offset;
 		p = p->next;
 	}
 }

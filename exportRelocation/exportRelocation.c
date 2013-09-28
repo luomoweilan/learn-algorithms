@@ -9,9 +9,9 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include "list.h"
+#include "redircsym_map.h"
+#include "redircsym_info.h"
 #include "exportRelocation.h"
 
 void usage(void)
