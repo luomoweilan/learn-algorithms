@@ -6,10 +6,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef __LIST_H__
+#define __LIST_H__
+
 struct list {
 	void *data;
 	struct list *next;
 };
 
-extern int list_add(struct list **head, void *data);
-extern void list_show(struct list *head, void (*p)(void *data));
+#endif

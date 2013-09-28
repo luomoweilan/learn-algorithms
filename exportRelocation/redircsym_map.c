@@ -85,5 +85,6 @@ void redircsym_map_write_to_file(FILE *f)
 		if (tmp->matchflag) {
 			fwrite(tmp->symname, 1, SYM_NAME_LEN, f);
 		}
+		p = p->next;
 	}
 }

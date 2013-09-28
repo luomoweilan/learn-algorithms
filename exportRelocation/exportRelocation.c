@@ -60,10 +60,13 @@ void main(int argc, char *argv[])
 	struct list *tmp;
 
 	while (fgets(line_buff, MAX_LINE_NUM, objdump)) {
-		if (redircsym_info_isppc(line_buff, symaddr, symtype, symname) 
-				&& (tmp = redircsym_map_find(symname))) {
+		if (!redircsym_info_isppc(line_buff, symaddr, symtype, symname) 
+				&& (tmp = redircsym_map_find("zsy"))) {
 			redircsym_map_set_matchflag(tmp);
-			redircsym_info_add(symaddr, symtype, tmp);
+			if (!redircsym_info_add(symaddr, symtype, tmp)) {
+				printf("redircsym_info_add %s error!\n", symname);
+				return;
+			}
 		}
 	}
 	redircsym_info_show();
@@ -71,10 +74,8 @@ void main(int argc, char *argv[])
 	redircsym_map_set_offset();
 	redircsym_info_set_offset();
 
-	redircsym_map_show();
-
 	redircsym_map_write_to_file(out);
-	redircsym_info_write_to_file(out);
+//	redircsym_info_write_to_file(out);
 
 out_error:
 	fclose(out);
