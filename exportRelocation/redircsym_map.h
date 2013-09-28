@@ -10,4 +10,3 @@ struct redircsym_map {
 	int offset;
 	int matchflag;
 };
-

@@ -37,7 +37,7 @@ int redircsym_map_add(char *str)
 	return 0;
 }
 
-struct list * redircsym_map_find(char *str)
+struct list *redircsym_map_find(char *str)
 {
 	struct list *p = redircsym_map_list;
 	struct redircsym_map *tmp;
@@ -59,7 +59,7 @@ void redircsym_map_set_matchflag(struct list *p)
 	tmp->matchflag = 1;
 }
 
-void redircsym_map_set_offset()
+void redircsym_map_set_offset(void)
 {
 	struct list *p = redircsym_map_list;
 	struct redircsym_map *tmp;
